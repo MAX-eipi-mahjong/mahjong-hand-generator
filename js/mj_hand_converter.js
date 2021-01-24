@@ -8,17 +8,17 @@ function parseText(format) {
     const paiNumbers = [];
     const matches = format.match(/([mpsj](?:r?\d)+|b|\s)/g);
     for (const m of matches) {
-        if (m.trim()) {
-            const typeText = m[0];
-            for (const n of m.match(/r?\d/g)) {
-                paiNumbers.push(convertToPai(typeText, n));
-            }
+        if (!m.trim()) {
+            paiNumbers.push(40);
         }
         else if (m === "b") {
             paiNumbers.push(44);
         }
         else {
-            paiNumbers.push(40);
+            const typeText = m[0];
+            for (const n of m.match(/r?\d/g)) {
+                paiNumbers.push(convertToPai(typeText, n));
+            }
         }
     }
     console.log(paiNumbers);
@@ -90,7 +90,7 @@ function putImages(format) {
 
 function captureImage() {
     document.getElementById("capture").querySelectorAll('*').forEach(n => n.remove());
-    html2canvas(document.querySelector("#put_area")).then(canvas => {
+    html2canvas(document.querySelector("#put_area"), { backgroundColor: null }).then(canvas => {
         document.getElementById("capture").appendChild(canvas);
     });
 }
