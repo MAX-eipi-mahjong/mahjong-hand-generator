@@ -5,70 +5,29 @@
     <meta charset="utf-8">
     <title>麻雀 牌姿ジェネレーター</title>
 </head>
-
 <body>
-    <div id="capture">
-        <div>
-            <!-- 萬子 -->
-            <img src="images/man1-66-90-l.png">
-            <img src="images/man2-66-90-l.png">
-            <img src="images/man3-66-90-l.png">
-            <img src="images/man4-66-90-l.png">
-            <img src="images/man5-66-90-l.png">
-            <img src="images/man6-66-90-l.png">
-            <img src="images/man7-66-90-l.png">
-            <img src="images/man8-66-90-l.png">
-            <img src="images/man9-66-90-l.png">
-        </div>
-        <div>
-            <!-- 筒子 -->
-            <img src="images/pin1-66-90-l.png">
-            <img src="images/pin2-66-90-l.png">
-            <img src="images/pin3-66-90-l.png">
-            <img src="images/pin4-66-90-l.png">
-            <img src="images/pin5-66-90-l.png">
-            <img src="images/pin6-66-90-l.png">
-            <img src="images/pin7-66-90-l.png">
-            <img src="images/pin8-66-90-l.png">
-            <img src="images/pin9-66-90-l.png">
-        </div>
-        <div>
-            <!-- 索子 -->
-            <img src="images/sou1-66-90-l.png">
-            <img src="images/sou2-66-90-l.png">
-            <img src="images/sou3-66-90-l.png">
-            <img src="images/sou4-66-90-l.png">
-            <img src="images/sou5-66-90-l.png">
-            <img src="images/sou6-66-90-l.png">
-            <img src="images/sou7-66-90-l.png">
-            <img src="images/sou8-66-90-l.png">
-            <img src="images/sou9-66-90-l.png">
-        </div>
-        <div>
-            <!-- 字牌 -->
-            <img src="images/ji1-66-90-l.png">
-            <img src="images/ji2-66-90-l.png">
-            <img src="images/ji3-66-90-l.png">
-            <img src="images/ji4-66-90-l.png">
-            <img src="images/ji5-66-90-l.png">
-            <img src="images/ji6-66-90-l.png">
-            <img src="images/ji7-66-90-l.png">
-        </div>
-        <div>
-            <!-- その他 -->
-            <img src="images/aka1-66-90-l.png">
-            <img src="images/aka2-66-90-l.png">
-            <img src="images/aka3-66-90-l.png">
-            <img src="images/b-66-90-l.png">
-        </div>
-    </div>
-
     <script src="js/html2canvas.js"></script>
-    <script type="text/javascript">
-        html2canvas(document.querySelector("#capture")).then(canvas => {
-            document.body.appendChild(canvas)
-        });
+    <script src="js/mj_hand_converter.js"></script>
+    <script>
+        function invokePutImages() {
+            const format = document.getElementById("format_text").value;
+            putImages(format);
+        }
+        function invokeCapture() {
+            captureImage();
+        }
     </script>
+    <div>
+        <p>フォーマット: <input type="text" id="format_text" width="200px"></p>
+        <p><input type="button" value="配置" onclick="invokePutImages()"></p>
+    </div>
+    <div id="put_area">
+    </div>
+    <div>
+        <p><input type="button" value="生成" onclick="invokeCapture()"></p>
+    </div>
+    <div id="capture">
+    </div>
 </body>
 
 </html>
