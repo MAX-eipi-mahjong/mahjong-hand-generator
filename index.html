@@ -1,11 +1,74 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>麻雀 牌姿ジェネレーター</title>
-    </head>
-    <body>
-        ここに牌姿ジェネレーターができるよ
-        <img src="res/aka1-66-90-l.png">
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>麻雀 牌姿ジェネレーター</title>
+</head>
+
+<body>
+    <div id="capture">
+        <div>
+            <!-- 萬子 -->
+            <img src="res/man1-66-90-l.png">
+            <img src="res/man2-66-90-l.png">
+            <img src="res/man3-66-90-l.png">
+            <img src="res/man4-66-90-l.png">
+            <img src="res/man5-66-90-l.png">
+            <img src="res/man6-66-90-l.png">
+            <img src="res/man7-66-90-l.png">
+            <img src="res/man8-66-90-l.png">
+            <img src="res/man9-66-90-l.png">
+        </div>
+        <div>
+            <!-- 筒子 -->
+            <img src="res/pin1-66-90-l.png">
+            <img src="res/pin2-66-90-l.png">
+            <img src="res/pin3-66-90-l.png">
+            <img src="res/pin4-66-90-l.png">
+            <img src="res/pin5-66-90-l.png">
+            <img src="res/pin6-66-90-l.png">
+            <img src="res/pin7-66-90-l.png">
+            <img src="res/pin8-66-90-l.png">
+            <img src="res/pin9-66-90-l.png">
+        </div>
+        <div>
+            <!-- 索子 -->
+            <img src="res/sou1-66-90-l.png">
+            <img src="res/sou2-66-90-l.png">
+            <img src="res/sou3-66-90-l.png">
+            <img src="res/sou4-66-90-l.png">
+            <img src="res/sou5-66-90-l.png">
+            <img src="res/sou6-66-90-l.png">
+            <img src="res/sou7-66-90-l.png">
+            <img src="res/sou8-66-90-l.png">
+            <img src="res/sou9-66-90-l.png">
+        </div>
+        <div>
+            <!-- 字牌 -->
+            <img src="res/ji1-66-90-l.png">
+            <img src="res/ji2-66-90-l.png">
+            <img src="res/ji3-66-90-l.png">
+            <img src="res/ji4-66-90-l.png">
+            <img src="res/ji5-66-90-l.png">
+            <img src="res/ji6-66-90-l.png">
+            <img src="res/ji7-66-90-l.png">
+        </div>
+        <div>
+            <!-- その他 -->
+            <img src="res/aka1-66-90-l.png">
+            <img src="res/aka2-66-90-l.png">
+            <img src="res/aka3-66-90-l.png">
+            <img src="res/b-66-90-l.png">
+        </div>
+    </div>
+
+    <script src="html2canvas.js"></script>
+    <script type="text/javascript">
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.body.appendChild(canvas)
+        });
+    </script>
+</body>
+
 </html>
