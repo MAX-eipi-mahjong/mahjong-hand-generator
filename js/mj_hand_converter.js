@@ -90,8 +90,19 @@ function putImages(format) {
 
 function captureImage() {
     document.getElementById("capture").querySelectorAll('*').forEach(n => n.remove());
-    console.log(document.getElementById("capture").childElementCount);
-    html2canvas(document.querySelector("#put_area"), { backgroundColor: null }).then(canvas => {
+    let width = 0;
+    let height = 0;
+    document.getElementById("put_area").querySelectorAll('*').forEach(n => {
+        width += n.clientWidth;
+        height = Math.max(height, n.clientHeight);
+    });
+    let count = document.getElementById("put_area").childElementCount;
+    html2canvas(document.querySelector("#put_area"), {
+        backgroundColor: null,
+        windowWith: width,
+        width: width,
+        height: height
+    }).then(canvas => {
         document.getElementById("capture").appendChild(canvas);
     });
 }
