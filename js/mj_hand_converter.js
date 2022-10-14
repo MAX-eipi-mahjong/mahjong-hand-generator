@@ -90,6 +90,7 @@ function putImages(format) {
 
 function captureImage() {
     document.getElementById("capture").querySelectorAll('*').forEach(n => n.remove());
+    console.log(document.getElementById("capture").childElementCount);
     html2canvas(document.querySelector("#put_area"), { backgroundColor: null }).then(canvas => {
         document.getElementById("capture").appendChild(canvas);
     });
